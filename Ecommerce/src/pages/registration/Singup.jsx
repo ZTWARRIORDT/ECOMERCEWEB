@@ -1,11 +1,11 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom'
 import myContext from '../../context/data/myContext';
-// import { toast } from 'react-toastify';
-// import { createUserWithEmailAndPassword } from 'firebase/auth';
-// import { auth, fireDB } from '../../fireabase/FirebaseConfig';
-// import { Timestamp, addDoc, collection } from 'firebase/firestore';
-// import Loader from '../../components/loader/Loader';
+import { toast } from 'react-toastify';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import Loader from '../../components/loader/Loader';
+import { auth,fireDB } from '../../firebase/FireBaseConfig';
+import { Timestamp,addDoc, collection } from '@firebase/firestore';
 
 function Signup() {
     const [name, setName] = useState("");
@@ -16,15 +16,14 @@ function Signup() {
     const { loading, setLoading } = context;
 
     const signup = async () => {
-        setLoading(true)
-        if (name === "" || email === "" || password === "") {
+        setLoading(true);
+        if(name === "" || email ==="" || password ===""){
             return toast.error("All fields are required")
         }
 
-        try {
-            const users = await createUserWithEmailAndPassword(auth, email, password);
-
-            // console.log(users)
+        try{
+            const users = await createUserWithEmailAndPassword(auth,email,password)
+            console.log(users)
 
             const user = {
                 name: name,
@@ -39,8 +38,8 @@ function Signup() {
             setEmail("");
             setPassword("");
             setLoading(false)
-            
-        } catch (error) {
+
+        }catch (error){
             console.log(error)
             setLoading(false)
         }
