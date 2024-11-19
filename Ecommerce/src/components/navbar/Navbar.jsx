@@ -239,8 +239,7 @@ export default function Navbar() {
                   )}
 
                   {user ? ( 
-                    <Link to={'/login'}> <a
-                      onClick={logout}
+                    <Link to={'/login'}><a
                       className="text-sm font-medium text-gray-700 cursor-pointer  "
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
