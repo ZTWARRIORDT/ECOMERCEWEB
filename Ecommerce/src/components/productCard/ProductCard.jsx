@@ -3,7 +3,8 @@ import myContext from '../../context/data/myContext'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart } from '../../redux/cartSlice'
 import { toast } from 'react-toastify'
-import { Navigate } from 'react-router-dom'
+import { Link,Navigate } from 'react-router-dom'
+
 
 function ProductCard() {
     const context = useContext(myContext)
