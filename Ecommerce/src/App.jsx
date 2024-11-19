@@ -41,12 +41,12 @@ function App() {
           <Route path="/productinfo/:id" element={<ProductInfo/>}/>
           <Route path="/addproduct" element={
             <ProtectedRoutesForAdmin>
-              <Dashboard/>
+              <AddProduct/>
             </ProtectedRoutesForAdmin>
           }/>
           <Route path="/updateproduct" element={
             <ProtectedRoutesForAdmin>
-              <Dashboard/>
+              <UpdateProduct/>
             </ProtectedRoutesForAdmin>
           }/>
           <Route path="/*" element={<NoPage/>}/>
