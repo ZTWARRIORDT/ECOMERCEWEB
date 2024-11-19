@@ -5,7 +5,6 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-
 import Home from './pages/home/Home';
 import Order from './pages/order/Order';
 import Cart from './pages/cart/Cart';

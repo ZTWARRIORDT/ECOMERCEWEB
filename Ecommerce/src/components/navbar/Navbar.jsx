@@ -100,13 +100,12 @@ export default function Navbar() {
 
                   {user ? (
                     <div className="flow-root">
-                      <a
-                        onClick={logout}
-                        className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer"
-                        style={{ color: mode === "dark" ? "white" : "" }}
-                      >
-                        Logout
-                      </a>
+                    <Link to={'/login'}><a
+                      className="text-sm font-medium text-gray-700 cursor-pointer  "
+                      style={{ color: mode === "dark" ? "white" : "" }}
+                    >
+                      Log Out
+                    </a></Link>
                     </div>
                   ) : (
                     ""
@@ -243,7 +242,7 @@ export default function Navbar() {
                       className="text-sm font-medium text-gray-700 cursor-pointer  "
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
-                      Log out
+                      Log Out
                     </a></Link>
                     
                   ) : (
